@@ -7,15 +7,12 @@ def ascii_to_hex_counter(text):
         hex_values = text.encode('ascii').hex()
         # Count bytes (2 hex digits = 1 byte)
         byte_count = len(hex_values) // 2
-        # Calculate total bytes (adding 1 as requested)
-        total_bytes = byte_count + 1
-        # Convert total bytes to hex format (uppercase, no '0x' prefix)
-        hex_bytes = f"{total_bytes:02X}"
+        # Convert byte count to hex format (uppercase, no '0x' prefix)
+        hex_bytes = f"{byte_count:02X}"
         
         return {
             'hex': hex_values,
             'byte_count': byte_count,
-            'total_with_extra_byte': total_bytes,
             'hex_byte_count': hex_bytes
         }
     except UnicodeEncodeError:
@@ -38,7 +35,6 @@ def main():
     print(f"Original text: {text}")
     print(f"Pure hex value: {result['hex']}")
     print(f"Byte count: {result['byte_count']}")
-    print(f"Total bytes (including +1): {result['total_with_extra_byte']}")
     print(f"Byte count in hex: {result['hex_byte_count']}")
 
 if __name__ == "__main__":

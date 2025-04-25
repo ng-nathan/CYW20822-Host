@@ -14,8 +14,8 @@ def read_from_port(ser, stop_event):
 
 def main():
     if len(sys.argv) != 2:
-        print("Usage: python term.py <COM_PORT>")
-        print("Example: python term.py COM14")
+        print("Usage: python cyw20822term.py <COM_PORT>")
+        print("Example: python cyw20822term.py COM14")
         sys.exit(1)
 
     port = sys.argv[1].upper()  # Convert to uppercase for consistency
